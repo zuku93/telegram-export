@@ -91,7 +91,6 @@ class Exporter:
                     dialogType = 'channel'
                 else:
                     dialogType = 'unknown!'
-                    pass
                 if dialogType in dialog_to_dump:
                     await self.downloader.start(dialog.entity)
                 else:
