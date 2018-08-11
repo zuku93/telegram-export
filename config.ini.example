@@ -62,7 +62,7 @@ MediaWhitelist = chatphoto, photo, sticker
 # dialog type to download. Options are:
 # "user", "group", "channel".
 # An empty list (default if omitted) means all are allowed.
-DialogWhitelist = user, group
+DialogWhitelist = user, group, channel
 
 # The maximum allowed file size for a document before skipping it.
 # For instance, "800KB" will only download files smaller or equal to 800KB.

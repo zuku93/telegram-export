@@ -59,7 +59,7 @@ def load_config(filename):
         'SessionName': 'exporter',
         'OutputDirectory': '.',
         'MediaWhitelist': 'chatphoto, photo, sticker',
-        'DialogWhitelist': 'user, group',
+        'DialogWhitelist': 'user, group, channel',
         'MaxSize': '1MB',
         'LogLevel': 'INFO',
         'DBFileName': 'export',
