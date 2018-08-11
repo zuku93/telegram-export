@@ -81,8 +81,22 @@ class Exporter:
                 await self.downloader.start(entity)
         else:
             # Neither blacklist nor whitelist - get all
+            dialog_to_dump = (self.dumper.config.get('DialogWhitelist') or '').replace(' ' ,'').split(',')
             for dialog in await self.client.get_dialogs(limit=None):
-                await self.downloader.start(dialog.entity)
+                if dialog.is_user:
+                    dialogType = 'user'
+                elif dialog.is_group:
+                    dialogType = 'group'
+                elif dialog.is_channel:
+                    dialogType = 'channel'
+                else:
+                    dialogType = 'unknown!'
+                    pass
+                if dialogType in dialog_to_dump:
+                    await self.downloader.start(dialog.entity)
+                else:
+                    continue
+                #await self.downloader.start(dialog.entity)
 
     async def download_past_media(self):
         """
