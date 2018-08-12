@@ -95,7 +95,6 @@ class Exporter:
                     await self.downloader.start(dialog.entity)
                 else:
                     continue
-                #await self.downloader.start(dialog.entity)
 
     async def download_past_media(self):
         """
